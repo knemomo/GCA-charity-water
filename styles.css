@@ -17,3 +17,142 @@ Fonts:
 - Avenir
 
 */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Proxima Nova, Avenir, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.hero-section{
+  position: relative; /* Needed for the overlay */
+  overflow: hidden; /* Prevents overflow of content */
+  top: 0;
+  left: 0;
+  width: 25vw;     /* Cover about 60% of the viewport width */
+  height: 100vh;   /* Cover the full height of the viewport */
+  /* Create a black-to-transparent gradient from left to right */
+  background: linear-gradient(to right, rgba(30,30,30,0.9), rgba(98,98,98,.6));
+  pointer-events: none; /* Let users click through the overlay */
+  z-index: 0;   
+        /* Place it behind all content */
+}
+
+.hero-text{
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+/* Make sure main content is above the overlay */
+.navbar, .hero, footer {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.logo img {
+  margin-right: 10px;
+}
+
+.cta-button {
+  background-color: #2E9DF7;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: normal;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #003366;
+}
+
+.hero {
+   /* Set the background image */
+  background-image: url('img/hero_image.jpg');
+
+  background-size: cover;      /* Make the image cover the whole background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;/* Do not repeat the image */
+  position: relative;          /* Needed for overlay positioning */
+  min-height: 100vh; /* Ensure it covers the full viewport width */
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero h1,
+.hero p {
+  /* Your styles here */
+  text-align: center; /* Example: center the text */
+  color: #fff7e1;     
+  margin:0;
+  margin-top: 2em;
+  margin-right: .5em;
+  margin-left: .5em;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #fff7e1; 
+}
+
+.hero-text p {
+  font-size: 1rem;
+  color: #fff7e1; 
+}
+
+.highlight {
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hero-image img {
+  max-width: 100%; 
+  height: auto;   
+  border-radius: 10px; 
+}
+
+.info-section {
+  background-color: #fff; /* White background for info section */
+  padding: 40px 20px;     /* Space inside the section */
+  margin-top: 40px;       /* Space above the info section */
+  border-radius: 10px;    /* Rounded corners */
+  max-width: 800px;       /* Limit width for readability */
+  margin-left: auto;
+  margin-right: auto;
+  color: #1a1a1a;
+}
